@@ -6,18 +6,17 @@ int endY = 250;
 void setup(){
   size(500,500);
   background(0);
-  strokeWeight(10);
+  strokeWeight(4);
 }
 void draw(){
   stroke((int)(Math.random()*200),100,100);
   while(startX<=500){
-    endX = startX + ((int)Math.random()*10);
-    endY = startY + ((int)Math.random()*19)-9;
+    endX = startX + (int)(Math.random()*10);
+    endY = startY + (int)(Math.random()*19)-9;
     line(startX,startY,endX,endY);
     startX = endX;
     startY = endY;
   }
-  mousePressed();
 }
 
 void mousePressed(){
