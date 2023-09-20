@@ -2,12 +2,15 @@ int startX = 250;
 int endX = 250;
 int startY = 0;
 int endY = 0;
+int r = (int)(Math.random()*60)+180;
+int g = (int)(Math.random()*50)+170;
 
 void setup(){
   size(500,500);
   background(0);
   strokeWeight(4);
   frameRate(500);
+  stroke(r,g,30);
   
   mousePressed();
 }
@@ -23,6 +26,8 @@ void draw(){
     rect(-10,-10,520,520);
     if(startY>=500){
       background(0);
+      r = (int)(Math.random()*100)+120;
+      g = (int)(Math.random()*100)+120;
     }
     clouds();
 }
@@ -49,5 +54,5 @@ void clouds(){
   ellipse(450,0,100,80);
   ellipse(490,0,100,70);
   
-  stroke((int)(Math.random()*60)+180,(int)(Math.random()*50)+180,30);
+  stroke(r, g, 30);
 }
