@@ -7,9 +7,36 @@ void setup(){
   size(500,500);
   background(0);
   strokeWeight(4);
+  frameRate(500);
+  
+  mousePressed();
 }
 void draw(){
-//clouds
+  
+//lightning
+    endY = startY + (int)(Math.random()*10);
+    endX = startX + (int)(Math.random()*19)-9;
+    line(startX,startY,endX,endY);
+    startX = endX;
+    startY = endY;
+    fill(0,0,0,3);
+    rect(-10,-10,520,520);
+    if(startY>=500){
+      background(0);
+    }
+    clouds();
+}
+
+void mousePressed(){
+  startY = 0;
+  endX = 250;
+  startX = 250 + (int)(Math.random()*500)-250;
+  endY = 0;
+  background(0);
+  clouds();
+}
+
+void clouds(){
   noStroke();
   fill(100,100,100);
   ellipse(0,0,200,80);
@@ -22,20 +49,5 @@ void draw(){
   ellipse(450,0,100,80);
   ellipse(490,0,100,70);
   
-//lightning
   stroke((int)(Math.random()*60)+180,(int)(Math.random()*50)+180,30);
-  while(startY<=500){
-    endY = startY + (int)(Math.random()*10);
-    endX = startX + (int)(Math.random()*19)-9;
-    line(startX,startY,endX,endY);
-    startX = endX;
-    startY = endY;
-  }
-}
-
-void mousePressed(){
-  startY = 0;
-  endX = 250;
-  startX = 250 + (int)(Math.random()*500)-250;
-  endY = 0;
 }
